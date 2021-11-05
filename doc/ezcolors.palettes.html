@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module ezcolors.palettes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ezcolors.html"><font color="#ffffff">ezcolors</font></a>.palettes</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/data/data/com.termux/files/usr/lib/python3.10/site-packages/ezcolors/palettes.py">/data/data/com.termux/files/usr/lib/python3.10/site-packages/ezcolors/palettes.py</a></font></td></tr></table>
+    <p><tt>this&nbsp;module&nbsp;contains&nbsp;various&nbsp;color&nbsp;palette&nbsp;functions&nbsp;that&nbsp;are&nbsp;to&nbsp;be&nbsp;used&nbsp;with&nbsp;the&nbsp;Color().palette()&nbsp;function</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="json.html">json</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="random.html">random</a><br>
+</td><td width="25%" valign=top><a href="ezcolors.utilities.html">ezcolors.utilities</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-all"><strong>all</strong></a>(last, steps=16, **kwargs)</dt><dd><tt>debug&nbsp;function&nbsp;that&nbsp;returns&nbsp;a&nbsp;list&nbsp;containing&nbsp;all&nbsp;available&nbsp;palettes&nbsp;for&nbsp;the&nbsp;color</tt></dd></dl>
+ <dl><dt><a name="-color_list"><strong>color_list</strong></a>(last, length=16, i=0, colorlist=None, **kwargs)</dt><dd><tt>not&nbsp;sure&nbsp;if&nbsp;i&nbsp;still&nbsp;need&nbsp;this&nbsp;but&nbsp;havent&nbsp;deleted&nbsp;it&nbsp;in&nbsp;case&nbsp;it&nbsp;breaks&nbsp;everything</tt></dd></dl>
+ <dl><dt><a name="-golden_ratio"><strong>golden_ratio</strong></a>(last, **kwargs)</dt><dd><tt>produces&nbsp;a&nbsp;palette&nbsp;rotating&nbsp;each&nbsp;colors&nbsp;hue&nbsp;by&nbsp;the&nbsp;golden&nbsp;ratio.&nbsp;each&nbsp;color&nbsp;is&nbsp;high&nbsp;in&nbsp;contrast&nbsp;to&nbsp;the&nbsp;last</tt></dd></dl>
+ <dl><dt><a name="-rainbow"><strong>rainbow</strong></a>(last, length=16, **kwargs)</dt><dd><tt>produces&nbsp;a&nbsp;palette&nbsp;rotating&nbsp;the&nbsp;hue&nbsp;360°&nbsp;gradually</tt></dd></dl>
+ <dl><dt><a name="-random_hsl"><strong>random_hsl</strong></a>(last, **kwargs)</dt><dd><tt>random&nbsp;hue&nbsp;saturation&nbsp;and&nbsp;luminosity&nbsp;values.&nbsp;if&nbsp;h,&nbsp;s&nbsp;or&nbsp;l&nbsp;specified&nbsp;those&nbsp;values&nbsp;won't&nbsp;be&nbsp;randomised</tt></dd></dl>
+ <dl><dt><a name="-random_hsv"><strong>random_hsv</strong></a>(last, **kwargs)</dt><dd><tt>random&nbsp;hue&nbsp;saturation&nbsp;and&nbsp;value/brightness&nbsp;values.&nbsp;if&nbsp;h,&nbsp;s&nbsp;or&nbsp;v&nbsp;specified&nbsp;those&nbsp;values&nbsp;won't&nbsp;be&nbsp;randomised</tt></dd></dl>
+ <dl><dt><a name="-random_offset"><strong>random_offset</strong></a>(last, **kwargs)</dt><dd><tt>produces&nbsp;a&nbsp;pelette&nbsp;of&nbsp;colors&nbsp;consisting&nbsp;of&nbsp;values&nbsp;+&nbsp;or&nbsp;-&nbsp;the&nbsp;given&nbsp;offset</tt></dd></dl>
+ <dl><dt><a name="-save"><strong>save</strong></a>(palette, path='./', file='SavedPallet', overwrite=True, **kwargs)</dt><dd><tt>not&nbsp;fully&nbsp;implemented<br>
+saves&nbsp;the&nbsp;color&nbsp;palette&nbsp;to&nbsp;a&nbsp;json&nbsp;file</tt></dd></dl>
+ <dl><dt><a name="-saveall"><strong>saveall</strong></a>(color, path='./', file='SavedPallet', overwrite=True, length=16, **kwargs)</dt><dd><tt>not&nbsp;fully&nbsp;implemented<br>
+saves&nbsp;all&nbsp;color&nbsp;palettes&nbsp;of&nbsp;a&nbsp;color&nbsp;to&nbsp;a&nbsp;json&nbsp;file</tt></dd></dl>
+ <dl><dt><a name="-shades"><strong>shades</strong></a>(last, length=16, **kwargs)</dt><dd><tt>produces&nbsp;a&nbsp;palette&nbsp;varying&nbsp;from&nbsp;the&nbsp;base&nbsp;color&nbsp;to&nbsp;black</tt></dd></dl>
+ <dl><dt><a name="-tints"><strong>tints</strong></a>(last, length=16, **kwargs)</dt><dd><tt>produces&nbsp;a&nbsp;palette&nbsp;varying&nbsp;from&nbsp;the&nbsp;base&nbsp;color&nbsp;to&nbsp;white</tt></dd></dl>
+ <dl><dt><a name="-tones"><strong>tones</strong></a>(last, length=16, **kwargs)</dt><dd><tt>produces&nbsp;a&nbsp;palette&nbsp;varying&nbsp;from&nbsp;the&nbsp;base&nbsp;color&nbsp;to&nbsp;grey</tt></dd></dl>
+ <dl><dt><a name="-uniform_random"><strong>uniform_random</strong></a>(last, **kwargs)</dt><dd><tt>Random&nbsp;values&nbsp;for&nbsp;r,g,b&nbsp;this&nbsp;is&nbsp;the&nbsp;least&nbsp;harmonious&nbsp;palette&nbsp;as&nbsp;its&nbsp;completely&nbsp;random</tt></dd></dl>
+</td></tr></table>
+</body></html>
