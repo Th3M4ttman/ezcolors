@@ -943,3 +943,20 @@ def avg_color(colors: list):
 	b /= len(colors)
 	return Color(r, g, b)
 	
+def ColoredException(text, cls = Exception, color = LRed):
+	""" Returns an Exception with colored text.
+	text -- the desired exception text
+	cls -- the exception class
+	color -- the color to use
+	
+	if you want to only color the first part of the message just put the pipe character surrounded by spaces at the desired end of the color
+	eg: raise ColoredException("Red | white", ValueError) """
+	s = text.split(" | ")
+	plain = ""
+	if type(s) == list and len(s) > 1:
+		text = s[0]
+		plain = s[1]
+		
+	t = color.text(text)
+	e = cls(t + " " + plain)
+	return e

@@ -5,6 +5,6 @@ from . import Colors
 from . import palettes
 from . import utilities
 
-__version__ = "1.0.2"
+__version__ = "1.0.3"
 
 Colour = Color #for us brits
