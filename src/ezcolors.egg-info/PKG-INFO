@@ -7,6 +7,7 @@ Author: Matt Harris
 Author-email: WorkMatthewJHarris94@Gmail.com
 License: MIT
 Project-URL: Bug Tracker, https://github.com/Th3M4ttman/ezcolors/issues
+Project-URL: Documentation, "https://ezcolors.readthedocs.io/en/latest/"
 Description: A simple library that contains a ColorColour class for fast and easy definition of colours in python.  
         
         you can define a colour from  
