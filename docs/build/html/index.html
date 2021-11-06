@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to ezcolors’s documentation! &#8212; ezcolors  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-ezcolors-s-documentation">
+<h1>Welcome to ezcolors’s documentation!<a class="headerlink" href="#welcome-to-ezcolors-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">A simple library that contains a Color/Colour class for fast and easy definition of colours in python.</div>
+</div>
+<div class="line-block">
+<div class="line">you can define a colour from:</div>
+</div>
+<div class="line-block">
+<div class="line">hex – Colour(“#ff00ff”)</div>
+<div class="line">RGB – Colour(255, 0, 255)</div>
+<div class="line">rgba – Colour(255, 0, 255, 128)</div>
+<div class="line">hsl – Colour(hsl = [270, 100, 50])</div>
+<div class="line">hsv – Colour(hsv = [270, 100, 100])</div>
+<div class="line">colour name – Colour(“Light Purple”)</div>
+</div>
+<div class="line-block">
+<div class="line">with these colours you can then:</div>
+</div>
+<div class="line-block">
+<div class="line">perform math upon it</div>
+<div class="line">translate it to any color space</div>
+<div class="line">compare it to other colours</div>
+<div class="line">colour a string with ANSI escape sequences</div>
+<div class="line">generate a colour palette with various different colour harmonies (see palettes module)</div>
+</div>
+<div class="line-block">
+<div class="line">This package was entirely authored on a Samsung A5 so please excuse any spelling errors etc and let me know if you find any issues</div>
+</div>
+<span class="target" id="module-ezcolors"></span><p>This package contains a Color class to easily deal with colors</p>
+<span class="target" id="module-ezcolors.Colors"></span><p>this module contains the definition of the color class a simple and easy to use class for anything colorful in all color spaces</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ezcolors.Colors.</span></span><span class="sig-name descname"><span class="pre">Color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">255</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'wiki'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">255</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.Colors.Color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Color class that can be constructed with either a string (hex value or color name), singular r, g and b values or a list/tuple of rgb/hsv/hsv values</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.a">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">a</span></span><a class="headerlink" href="#ezcolors.Colors.Color.a" title="Permalink to this definition">¶</a></dt>
+<dd><p>The colors alpha channel</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.analagous">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">analagous</span></span><a class="headerlink" href="#ezcolors.Colors.Color.analagous" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of the color and its analagous colors</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.b">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">b</span></span><a class="headerlink" href="#ezcolors.Colors.Color.b" title="Permalink to this definition">¶</a></dt>
+<dd><p>The colors Blue channel</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.clamp">
+<span class="sig-name descname"><span class="pre">clamp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.Colors.Color.clamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>ensures that r, g, b, a are within range</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.closest">
+<span class="sig-name descname"><span class="pre">closest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.Colors.Color.closest" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the closest color to self out of the supplied list. if no list is given it will default to the 16 terminal colors</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.compl">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">compl</span></span><a class="headerlink" href="#ezcolors.Colors.Color.compl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the complementaru color</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.distance">
+<span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.Colors.Color.distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the distance between two colors rgb values</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.g">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">g</span></span><a class="headerlink" href="#ezcolors.Colors.Color.g" title="Permalink to this definition">¶</a></dt>
+<dd><p>The colors Green channel</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.h">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">h</span></span><a class="headerlink" href="#ezcolors.Colors.Color.h" title="Permalink to this definition">¶</a></dt>
+<dd><p>The colors Hue in degrees 0-360</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.hex">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">hex</span></span><a class="headerlink" href="#ezcolors.Colors.Color.hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the hexidecimal string of the color ignoring alpha</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.hex4">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">hex4</span></span><a class="headerlink" href="#ezcolors.Colors.Color.hex4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a hexidecimal string of the color including the alpha channel</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.hsl">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">hsl</span></span><a class="headerlink" href="#ezcolors.Colors.Color.hsl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates and returns Hue, Saturation, Luminosity from the colors RGB values</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.hsv">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">hsv</span></span><a class="headerlink" href="#ezcolors.Colors.Color.hsv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates and returns Hue, Saturation, Value from the colors RGB values</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.hsvgradient">
+<span class="sig-name descname"><span class="pre">hsvgradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.Colors.Color.hsvgradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of colors from self to target of length steps that gradually blends through the hsv colorspace</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.is_shade_of_white">
+<span class="sig-name descname"><span class="pre">is_shade_of_white</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.Colors.Color.is_shade_of_white" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns True if r == g == b</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.l">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">l</span></span><a class="headerlink" href="#ezcolors.Colors.Color.l" title="Permalink to this definition">¶</a></dt>
+<dd><p>The colors luminosity in %, 0-100</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#ezcolors.Colors.Color.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets the name of the color from the desired space</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.nphsl">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">nphsl</span></span><a class="headerlink" href="#ezcolors.Colors.Color.nphsl" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the colors hsl values as a numpy array</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.nphsv">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">nphsv</span></span><a class="headerlink" href="#ezcolors.Colors.Color.nphsv" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the colors hsv values as a numpy array</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.nprgb">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">nprgb</span></span><a class="headerlink" href="#ezcolors.Colors.Color.nprgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the colors rgb values as a numpy array</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.nprgba">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">nprgba</span></span><a class="headerlink" href="#ezcolors.Colors.Color.nprgba" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the colors rgba values as a numpy array</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.palette">
+<span class="sig-name descname"><span class="pre">palette</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">length=3</span></em>, <em class="sig-param"><span class="pre">function=&lt;function</span> <span class="pre">uniform_random&gt;</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.Colors.Color.palette" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of colors following a pattern created by the function</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.r">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">r</span></span><a class="headerlink" href="#ezcolors.Colors.Color.r" title="Permalink to this definition">¶</a></dt>
+<dd><p>The colors Red channel</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.random">
+<span class="sig-name descname"><span class="pre">random</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.Colors.Color.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to define a random color
+with no arguments it’ll return a random colour with random r,g,b values
+alternatively you can give it a list of values of length 0-3 any value that is None not given will be randomly generated
+rgb= red, green, blue
+hsv= hue, saturation, value
+hsl= hue, saturation, luminosity
+eg Color.random(hsl = [345, 100] will return a random color with hue 345° saturation 100% and random luminosity</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.range">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">range</span></span><a class="headerlink" href="#ezcolors.Colors.Color.range" title="Permalink to this definition">¶</a></dt>
+<dd><p>not fully implemented, range of rgba values default 0-255</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.rgb">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">rgb</span></span><a class="headerlink" href="#ezcolors.Colors.Color.rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a tuple of the colors r, g and b values</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.rgba">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">rgba</span></span><a class="headerlink" href="#ezcolors.Colors.Color.rgba" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of the colors r, g, b and a channels</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.s">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">s</span></span><a class="headerlink" href="#ezcolors.Colors.Color.s" title="Permalink to this definition">¶</a></dt>
+<dd><p>The colors saturation in %, 0-100</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.split_compl">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">split_compl</span></span><a class="headerlink" href="#ezcolors.Colors.Color.split_compl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns list containing 3 colors
+[complement with hue rotated -90°, original color, comlement with hue rotated 30°]</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.tetradic">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">tetradic</span></span><a class="headerlink" href="#ezcolors.Colors.Color.tetradic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of the color and its tetriadic harmonies</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.text">
+<span class="sig-name descname"><span class="pre">text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.Colors.Color.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a colored string using ansi escape sequences</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.triadic">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">triadic</span></span><a class="headerlink" href="#ezcolors.Colors.Color.triadic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of the color and its triadic harmonies</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ezcolors.Colors.Color.v">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">v</span></span><a class="headerlink" href="#ezcolors.Colors.Color.v" title="Permalink to this definition">¶</a></dt>
+<dd><p>The colors value or brightness in % 0-100</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.Colors.avg_color">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.Colors.</span></span><span class="sig-name descname"><span class="pre">avg_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.Colors.avg_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the average color of the list of colors given</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.Colors.string_to_color">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.Colors.</span></span><span class="sig-name descname"><span class="pre">string_to_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'wiki:'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.Colors.string_to_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a Color from a given hex value or color name</p>
+</dd></dl>
+
+<span class="target" id="module-ezcolors.utilities"></span><p>this module contains useful functions for converting between colorspaces</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.utilities.hex_to_rgb">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.utilities.</span></span><span class="sig-name descname"><span class="pre">hex_to_rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.utilities.hex_to_rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert hex to rgb</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.utilities.hsl_to_hsv">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.utilities.</span></span><span class="sig-name descname"><span class="pre">hsl_to_hsv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.utilities.hsl_to_hsv" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert from hsv to hsl</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.utilities.hsl_to_rgb">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.utilities.</span></span><span class="sig-name descname"><span class="pre">hsl_to_rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">255</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.utilities.hsl_to_rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert from hsl to rgb</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.utilities.hsv_to_hsl">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.utilities.</span></span><span class="sig-name descname"><span class="pre">hsv_to_hsl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.utilities.hsv_to_hsl" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert from hsv to hsl</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.utilities.hsv_to_rgb">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.utilities.</span></span><span class="sig-name descname"><span class="pre">hsv_to_rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">255</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.utilities.hsv_to_rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert from hsv to rgb</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.utilities.rgb_to_hex">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.utilities.</span></span><span class="sig-name descname"><span class="pre">rgb_to_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.utilities.rgb_to_hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert rgb to hex</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.utilities.rgb_to_hsl">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.utilities.</span></span><span class="sig-name descname"><span class="pre">rgb_to_hsl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.utilities.rgb_to_hsl" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert from rgb to hsl</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.utilities.rgb_to_hsv">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.utilities.</span></span><span class="sig-name descname"><span class="pre">rgb_to_hsv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">255</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.utilities.rgb_to_hsv" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert from rgb to hsv</p>
+</dd></dl>
+
+<span class="target" id="module-ezcolors.palettes"></span><p>this module contains various color palette functions that are to be used with the Color().palette() function</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.palettes.all">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.palettes.</span></span><span class="sig-name descname"><span class="pre">all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">last</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.palettes.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>debug function that returns a list containing all available palettes for the color</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.palettes.color_list">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.palettes.</span></span><span class="sig-name descname"><span class="pre">color_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">last</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorlist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.palettes.color_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>not sure if i still need this but havent deleted it in case it breaks everything</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.palettes.golden_ratio">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.palettes.</span></span><span class="sig-name descname"><span class="pre">golden_ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">last</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.palettes.golden_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>produces a palette rotating each colors hue by the golden ratio. each color is high in contrast to the last</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.palettes.rainbow">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.palettes.</span></span><span class="sig-name descname"><span class="pre">rainbow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">last</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.palettes.rainbow" title="Permalink to this definition">¶</a></dt>
+<dd><p>produces a palette rotating the hue 360° gradually</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.palettes.random_hsl">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.palettes.</span></span><span class="sig-name descname"><span class="pre">random_hsl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">last</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.palettes.random_hsl" title="Permalink to this definition">¶</a></dt>
+<dd><p>random hue saturation and luminosity values. if h, s or l specified those values won’t be randomised</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.palettes.random_hsv">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.palettes.</span></span><span class="sig-name descname"><span class="pre">random_hsv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">last</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.palettes.random_hsv" title="Permalink to this definition">¶</a></dt>
+<dd><p>random hue saturation and value/brightness values. if h, s or v specified those values won’t be randomised</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.palettes.random_offset">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.palettes.</span></span><span class="sig-name descname"><span class="pre">random_offset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">last</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.palettes.random_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>produces a pelette of colors consisting of values + or - the given offset</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.palettes.save">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.palettes.</span></span><span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">palette</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SavedPallet'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.palettes.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>not fully implemented
+saves the color palette to a json file</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.palettes.saveall">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.palettes.</span></span><span class="sig-name descname"><span class="pre">saveall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SavedPallet'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.palettes.saveall" title="Permalink to this definition">¶</a></dt>
+<dd><p>not fully implemented
+saves all color palettes of a color to a json file</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.palettes.shades">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.palettes.</span></span><span class="sig-name descname"><span class="pre">shades</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">last</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.palettes.shades" title="Permalink to this definition">¶</a></dt>
+<dd><p>produces a palette varying from the base color to black</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.palettes.tints">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.palettes.</span></span><span class="sig-name descname"><span class="pre">tints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">last</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.palettes.tints" title="Permalink to this definition">¶</a></dt>
+<dd><p>produces a palette varying from the base color to white</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.palettes.tones">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.palettes.</span></span><span class="sig-name descname"><span class="pre">tones</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">last</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.palettes.tones" title="Permalink to this definition">¶</a></dt>
+<dd><p>produces a palette varying from the base color to grey</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ezcolors.palettes.uniform_random">
+<span class="sig-prename descclassname"><span class="pre">ezcolors.palettes.</span></span><span class="sig-name descname"><span class="pre">uniform_random</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">last</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ezcolors.palettes.uniform_random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Random values for r,g,b this is the least harmonious palette as its completely random</p>
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">ezcolors</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Matt Harris.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

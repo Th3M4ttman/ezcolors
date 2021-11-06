@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: ezcolors
+Version: 1.0.0
+Summary: Easy colors and color math
+Home-page: https://github.com/Th3M4ttman/ezcolors
+Author: Matt Harris
+Author-email: WorkMatthewJHarris94@Gmail.com
+License: MIT
+Project-URL: Bug Tracker, https://github.com/Th3M4ttman/ezcolors/issues
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+UNKNOWN
+
