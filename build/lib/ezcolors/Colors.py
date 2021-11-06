@@ -14,7 +14,7 @@ try:
 except:
 	numpy_enabled = False
 
-
+#"C:/Users/Y0L0S.DESKTOP-LE6HALS/Documents/ezcolors/src/ezcolors/web.json"
 with open("/".join(__file__.split("/")[0:-1]) + "/web.json") as f:
 	string = ""
 	for line in f:
@@ -806,7 +806,7 @@ class Color():
 		if not numpy_enabled:
 			return self.hsl
 		return np.array(self.hsl)
-
+#"C:/Users/Y0L0S.DESKTOP-LE6HALS/Documents/ezcolors/src/ezcolors/names.json"
 with open("/".join(__file__.split("/")[0:-1]) + "/names.json") as f:
 	string = ""
 	for line in f:
