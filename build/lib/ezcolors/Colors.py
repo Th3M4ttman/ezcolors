@@ -75,7 +75,8 @@ class Color():
 			s = r
 			r = 0
 		self._name = name
-		self.refresh_name = False
+		if name != None:
+			self.update_name = False
 		self._r = r
 		self._g = g
 		self._b = b
@@ -436,7 +437,8 @@ class Color():
 		self.g = int(self._g)
 		self.b = int(self._b)
 		self.a = int(self._a)
-		return 
+		return
+		"""
 		if preserve:
 			m = max(self._r, self._g, self._b)
 			self._r /= m
@@ -446,8 +448,7 @@ class Color():
 			self._range = 1
 			self.range = prev
 			return 
-				
-		
+		"""
 			
 		if self._r > self.range:
 			self._r = self.range
@@ -468,6 +469,7 @@ class Color():
 			self._a = self.range
 		elif self._a < 0:
 			self._a = 0
+			
 			
 	@property
 	def range(self):
@@ -535,7 +537,8 @@ class Color():
 		for k, i in self.space.items():
 			try:
 				if i["hex"].replace("0x", "#") == self.hex:
-					self._name = k
+					if self.update_name:
+						self._name = k
 					return self._name
 			except Exception as e:
 				print(e)
@@ -960,3 +963,69 @@ def ColoredException(text, cls = Exception, color = LRed):
 	t = color.text(text)
 	e = cls(t + " " + plain)
 	return e
+
+			
+class cBool():
+	""" A coloured boolean. works like a normal boolean but when printed it'll be green or red depending on truth
+	can also be used to represent None"""
+	def __init__(self, true = True, *args, **kwargs):
+		self.b = true
+	
+	def __str__(self):
+		return self.color.text(self.b)
+	
+	def __repr__(self):
+		return self.b
+			
+	@property
+	def color(self):
+		if self.b is None:
+			return LYellow
+		if self.b:
+			return LGreen
+		return LRed
+	
+	def __eq__(self, other):
+		return cBool(self.b == other)
+		
+	def __ne__(self, other):
+		return cBool(self.b != other)
+		
+true = cBool()
+false = cBool(False)
+none = cBool(None)
+
+def choice(prompt, choices= ("yes", "no"), short = True, return_choice = False, colors = (LGreen, LRed, LYellow, LBlue, LPurple, LCyan)):
+	""" Input with predefined yes/no choices. short shortens it to y/n.
+	prompt is the input prompt
+	choices is an iterable containing the possible choices. default yes/no
+	return choice is whether to return the choice as a string instead of the index
+	colors is an iterable of colora to cycle throufh for the choices. """
+	choices_s = ""
+	i = 0
+	for j, ch in enumerate(choices):
+		if i >= len(colors):
+			i = 0
+		col = colors[i]
+		if j == 0:
+			text = ch[0].upper()
+		else:
+			text = ch[0].lower()
+		choices_s +=  col.text(text)
+		i += 1
+		if not short:
+			choices_s += ch[1:].lower() + "/"
+		else:
+			choices_s += "/"
+			
+	prompt += f" {choices_s[:-1]}: "
+			
+	inp = input(prompt)
+	if inp == "": inp = " "
+	for i, choice in enumerate(choices):
+		if inp.lower() == choice.lower() or inp[0].lower() == choice[0].lower():
+			if return_choice: return choice
+			return i
+	if return_choice: return choices[0]
+	return 0
+	

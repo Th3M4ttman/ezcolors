@@ -9,6 +9,7 @@ src/ezcolors/Colors.py
 src/ezcolors/__init__.py
 src/ezcolors/names.json
 src/ezcolors/palettes.py
+src/ezcolors/test.py
 src/ezcolors/utilities.py
 src/ezcolors/web.json
 src/ezcolors.egg-info/PKG-INFO
