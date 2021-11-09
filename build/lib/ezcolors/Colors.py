@@ -1,11 +1,13 @@
 """ this module contains the definition of the color class a simple and easy to use class for anything colorful in all color spaces """
-
+import os
 import json
-import textdistance
 from copy import copy, deepcopy
+
+import textdistance
 
 from .utilities import *
 from .palettes import *
+
 
 #checks for numpy
 try:
@@ -14,13 +16,36 @@ try:
 except:
 	numpy_enabled = False
 
-#"C:/Users/Y0L0S.DESKTOP-LE6HALS/Documents/ezcolors/src/ezcolors/web.json"
-with open("/".join(__file__.split("/")[0:-1]) + "/web.json") as f:
-	string = ""
-	for line in f:
-		string += line
-	web = json.loads(string)
-	del string
+def load_colors(webf, namesf):
+        """Load the color names from file """
+        with open(webf) as f:
+                string = ""
+                for line in f:
+                        string += line
+                web = json.loads(string)
+                del string
+
+        with open(namesf) as f:
+                string = ""
+                for line in f:
+                        string += line
+                wiki = json.loads(string)
+                del string
+        return web, wiki
+
+HERE = os.path.abspath("\\".join(__file__.split("\\")[:-1]))
+
+try:
+        webf = os.path.abspath(HERE + "/web.json").replace("\\","/")
+        namesf = os.path.abspath(HERE + "/names.json").replace("\\","/")
+        web, wiki = load_colors(webf, namesf)
+except Exception as e:
+        print(e)
+        webf = os.path.normcase(HERE + "/web.json")
+        namesf = os.path.normcase(HERE + "/names.json")
+        web, wiki = load_colors(webf, namesf)
+
+
 
 class Color():
 	""" Color class that can be constructed with either a string (hex value or color name), singular r, g and b values or a list/tuple of rgb/hsv/hsv values """
@@ -809,13 +834,7 @@ class Color():
 		if not numpy_enabled:
 			return self.hsl
 		return np.array(self.hsl)
-#"C:/Users/Y0L0S.DESKTOP-LE6HALS/Documents/ezcolors/src/ezcolors/names.json"
-with open("/".join(__file__.split("/")[0:-1]) + "/names.json") as f:
-	string = ""
-	for line in f:
-		string += line
-	wiki = json.loads(string)
-	del string
+
 
 
 def string_to_color(string, space="wiki:"):
@@ -975,7 +994,7 @@ class cBool():
 		return self.color.text(self.b)
 	
 	def __repr__(self):
-		return self.b
+		return f"cBool({self.b})"
 			
 	@property
 	def color(self):
