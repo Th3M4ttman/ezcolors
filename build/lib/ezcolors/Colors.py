@@ -2,11 +2,13 @@
 import os
 import json
 from copy import copy, deepcopy
+import site
 
 import textdistance
 
 from .utilities import *
 from .palettes import *
+
 
 
 #checks for numpy
@@ -33,16 +35,20 @@ def load_colors(webf, namesf):
                 del string
         return web, wiki
 
-HERE = os.path.abspath("\\".join(__file__.split("\\")[:-1]))
+
 
 try:
+        HERE = site.getsitepackages()[-1] + "/ezcolors"
+        #print("Linux:", HERE)
         webf = os.path.abspath(HERE + "/web.json").replace("\\","/")
         namesf = os.path.abspath(HERE + "/names.json").replace("\\","/")
         web, wiki = load_colors(webf, namesf)
 except Exception as e:
-        print(e)
-        webf = os.path.normcase(HERE + "/web.json")
-        namesf = os.path.normcase(HERE + "/names.json")
+        #print(e)
+        HERE = site.getsitepackages()[-1] + "\\ezcolors"
+        #print("Windows:", HERE)
+        webf = os.path.abspath(HERE + "\\web.json")
+        namesf = os.path.abspath(HERE + "\\names.json")
         web, wiki = load_colors(webf, namesf)
 
 
