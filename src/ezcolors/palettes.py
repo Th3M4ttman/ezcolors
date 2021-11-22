@@ -91,7 +91,7 @@ def tones(last, length = 16, **kwargs):
 	
 	return r, g, b
 	
-def rainbow(last, length = 16, **kwargs):
+def rainbow(last, length = 16, speed = 1, **kwargs):
 	""" produces a palette rotating the hue 360° gradually"""
 	h, s, l = last.hsl
 	h += 360/(length+1)

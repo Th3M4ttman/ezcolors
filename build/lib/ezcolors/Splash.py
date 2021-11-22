@@ -19,8 +19,10 @@ def terminal_to_color(col: int):
 	else: return colors[col]
 
 def splash(globalsref, color = White, title = None, sub = "---", author = None, version = None, lines=True, doc=True, use_mptc=None, bg = None, bg2 = None, edge = 14, text_bg = None, text_fg = None, pulse = True, pulse_edge = False):
-		if title is None:
+		if title is None and "__file__" in globalsref.keys():
 			title = globalsref["__file__"].split("/")[-1]
+		else:
+			title = Unnamed
 		if "__title__" in globalsref.keys():
 				title = globalsref["__title__"]
 		if "__subtitle__" in globalsref.keys():
@@ -38,6 +40,39 @@ def splash(globalsref, color = White, title = None, sub = "---", author = None, 
 		if "__doc__" in globalsref.keys() and  doc in (True, None):
 			doc = globalsref["__doc__"]
 			
+		if "__colors__" in globalsref.keys():
+			colors = globalsref["__colors__"]
+			if type(colors) in (list, tuple):
+				colors = list(colors)
+				while len(colors) < 2:
+					colors.append(colors[0])
+			elif type(colors) == str:
+				colors = [Color(colors), Color(colors), Color(colors)]
+			elif type(colors) == int or isinstance(colors, Color):
+				colors = [colors]
+				while len(colors) < 2:
+					colors.append(colors[0])
+			bg = colors[0]
+			bg2 = colors[1]
+			color = colors[0]
+		
+		if "__textcolors__" in globalsref.keys():
+			colors = globalsref["__textcolors__"]
+			if type(colors) in (list, tuple):
+				colors = list(colors)
+				while len(colors) < 2:
+					colors.append(bg)
+			elif type(colors) == str:
+				colors = [Color(colors), bg]
+			elif type(colors) == int or isinstance(colors, Color):
+				colors = [colors]
+				while len(colors) < 2:
+					colors.append(bg)
+					
+			text_fg = colors[0]
+			text_bg = colors[1]
+		
+			
 		if doc is True:
 			doc = False
 				
@@ -49,8 +84,10 @@ def splash(globalsref, color = White, title = None, sub = "---", author = None, 
 			pass
 		
 		#print("mptc", cBool(mptc_enabled))
-		
-		x, y = os.popen('stty size', 'r').read().split()
+		try:
+			x, y = os.popen('stty size', 'r').read().split()
+		except:
+			x, y = 48, 60
 		y = int(y)
 		
 		if mptc_enabled and (use_mptc is True or use_mptc is None):
@@ -75,7 +112,7 @@ def splash(globalsref, color = White, title = None, sub = "---", author = None, 
 				text_bg = color_to_terminal(text_bg)
 				
 			
-			print(mptc.Splash(title=title, pulse=pulse, bg=bg, bg2=bg2, edges=edge, textbg=text_bg, textfg=text_fg, auth=f"By {author}", sub=sub))
+			print(mptc.Splash(title=title, pulse=pulse, bg=bg, bg2=bg2, edges=edge, textbg=text_bg, textfg=text_fg, auth=f"By {author}", sub=sub, ver=version))
 			if doc:
 				print()
 				print(doc)
